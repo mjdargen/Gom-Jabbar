@@ -15,7 +15,7 @@ def main():
     # creating processes
     audio_process = multiprocessing.Process(target=audio, args=(parent_conn,))
     ultra_process = multiprocessing.Process(target=ultra, args=(child_conn,))
-    
+
     # be sure to kill processes if keyboard interrupted
     try:
         # starting audio process
@@ -26,7 +26,7 @@ def main():
         # wait until audio is finished
         audio_process.join()
         # if audio finished, kill ultrasonic sensor process
-        ultra_process.terminate()
+        ultra_process.join()
     except KeyboardInterrupt:
         print('Interrupted')
         audio_process.terminate()

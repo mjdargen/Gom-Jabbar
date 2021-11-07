@@ -11,6 +11,7 @@ from gpiozero import DistanceSensor
 from gpiozero import AngularServo
 from time import sleep
 
+
 # audio player process
 def audio(conn,):
     sleep(5)
@@ -31,8 +32,8 @@ def audio(conn,):
 # ultrasonic sensor/servo process
 # ultrasonic sensor
 # VCC   - 5V
-# TRIG  - GPIO24
-# ECHO  - GPIO23 - needs 330/470GND voltage divider
+# TRIG  - GPIO23
+# ECHO  - GPIO24 - needs 330/470GND voltage divider
 # GND   - GND (also connected to ground on voltage divider)
 # servo
 # BROWN - GND
@@ -41,12 +42,12 @@ def audio(conn,):
 def ultra(conn, ):
     # initialize servo
     servo = AngularServo(17, min_angle=-90, max_angle=90)
-    servo.angle = 90 # move to start position
+    servo.angle = 90  # move to start position
     sleep(.5)
     servo.detach()  # stop jitter
     sleep(5)  # wait to get situated
     # initialize ultrasonic sensor
-    dist_sensor = DistanceSensor(echo=23, trigger=24, queue_len=1)
+    dist_sensor = DistanceSensor(echo=24, trigger=23, queue_len=1)
     count = 0
 
     while True:

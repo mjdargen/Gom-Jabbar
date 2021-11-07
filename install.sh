@@ -6,7 +6,7 @@
 echo "This script will update your packages and install new packages for Python 3."
 sleep 5s
 
-# update packages and remove any unnecessary packages
+# upgrade packages and remove any unnecessary packages
 sudo apt-get --assume-yes update
 sudo apt-get --assume-yes upgrade
 sudo apt-get --assume-yes autoremove
