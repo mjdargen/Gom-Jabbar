@@ -26,7 +26,7 @@ def main():
         # wait until audio is finished
         audio_process.join()
         # if audio finished, kill ultrasonic sensor process
-        ultra_process.join()
+        ultra_process.terminate()
     except KeyboardInterrupt:
         print('Interrupted')
         audio_process.terminate()
