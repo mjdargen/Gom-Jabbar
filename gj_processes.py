@@ -1,7 +1,7 @@
 # Gom Jabbar - gj_processes.py
 # Michael D'Argenio
 # mjdargen@gmail.com
-# https://dargenio.dev
+# https://dargen.io
 # https://github.com/mjdargen
 
 from pydub import AudioSegment
